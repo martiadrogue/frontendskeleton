@@ -1,4 +1,4 @@
-# front-end Skeleton
+# Front-End Skeleton
 
 A comfortable environment for a fast front-end development.
 
