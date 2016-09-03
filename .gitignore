@@ -1,5 +1,5 @@
 node_modules/
-css/
-img/
-js/
-fonts/
+./css/
+./js/
+./img/
+./fonts/
