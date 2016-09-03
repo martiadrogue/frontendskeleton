@@ -90,12 +90,25 @@ module.exports = function (grunt) {
       },
     },
     watch: {
-      scripts: {
-        files: 'assets/**/*.*',
-        tasks: ['less', 'cssmin', 'imagemin'],
-        options: {
-          debounceDelay: 250,
-        },
+      options: {
+        livereload: true,
+        debounceDelay: 250,
+      },
+      less: {
+        files: 'assets/less/**/*.less',
+        tasks: ['less'],
+      },
+      css: {
+        files: 'assets/css/**/*.css',
+        tasks: ['cssmin'],
+      },
+      js: {
+        files: 'assets/js/**/*.js',
+        tasks: ['concat', 'uglify'],
+      },
+      img: {
+        files: 'assets/img/**/*.*',
+        tasks: ['imagemin'],
       },
     },
   });
