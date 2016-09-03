@@ -1,6 +1,6 @@
-# ENVIRONTMENT
+# front-end Skeleton
 
-A Comfortable Development environment for a fast front-end development.
+A comfortable environment for a fast front-end development.
 
 Every front-end must be reusable, modular, and easy to update. All technologies
 used by front-end must follow standards and be fast to write and parse by
