@@ -20,8 +20,8 @@ module.exports = function (grunt) {
         files: {
           'css/main.css': [
             'assets/css/normalize.css',
-            'assets/css/grid.css',
             'assets/css/font-awesome.css',
+            'assets/css/block/*.css',
             'assets/css/styles.css',
           ],
         },
