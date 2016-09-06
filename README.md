@@ -6,6 +6,22 @@ Every front-end must be reusable, modular, and easy to update. All technologies
 used by front-end must follow standards and be fast to write and parse by
 browser.
 
+## Getting Started
+
+You may install these plugins with this command:
+
+```shell
+npm install
+```
+
+And then, you can run tasks calling this command:
+
+```shell
+grunt
+```
+
+## Useful Notes
+
 To make a fast development process there is Grunt an automatic task manager. It
 compile LESS to CSS, minifies CSS, uglifies JS and compress images each time a
 file is edited.
