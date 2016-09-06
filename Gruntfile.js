@@ -111,6 +111,13 @@ module.exports = function (grunt) {
         tasks: ['imagemin'],
       },
     },
+    connect: {
+      server: {
+        options: {
+          livereload: true,
+        },
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -119,6 +126,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default', ['less', 'cssmin', 'concat', 'uglify', 'imagemin']);
+  grunt.registerTask('default', ['connect', 'watch']);
 };

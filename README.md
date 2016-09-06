@@ -13,7 +13,5 @@ file is edited.
 To make sure source code standards it use linter for CSS, JS and HTML. Although
 for the CSS it follows protocol BEM.
 
-Config is made thinking on development. It's important to care about turn false
-debug mode of *Gruntfile.json* at `global_defs`, also turn false the
-`drop_console` key. And remove tag
-`<script src="//localhost:35729/livereload.js"></script>` from HTML templates.
+To use livereload well, it's necessary to connect to *http::/localhost:8000*
+with Grunt running.
