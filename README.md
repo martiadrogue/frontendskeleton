@@ -30,7 +30,9 @@ compile LESS to CSS, minifies CSS, uglifies JS and compress images each time a
 file is edited.
 
 To make sure source code standards it use linter for CSS, JS and HTML. Although
-for the CSS it follows protocol BEM.
+for the CSS it follows protocol [BEM][bem-website].
 
 To use livereload well, it's necessary to connect to *http::/localhost:8000*
 with Grunt running.
+
+[bem-website]: http://getbem.com/
