@@ -6,8 +6,8 @@ Every front-end must be reusable, modular, and easy to update. All technologies
 used by front-end must follow standards and be fast to write and parse by
 browser.
 
-**NOTE**: Before do anything you must replace occurrences of :project_name from
-*Gruntfile.js* with your project's name.
+**NOTE**: Before do anything you must replace occurrences *:project_name*,
+*:project_description* from your project's files.
 
 ## Getting Started
 
