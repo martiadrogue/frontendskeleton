@@ -27,22 +27,6 @@ module.exports = function (grunt) {
         },
       },
     },
-    concat: {
-      js: {
-        src: ['assets/js/block/**/*.js'],
-        dest: 'assets/js/build.js',
-      },
-      resource: {
-        files: [
-          {
-            expand: true,
-            cwd: 'assets/js/raw',
-            src: '**/*.json',
-            dest: 'js/raw',
-          },
-        ],
-      },
-    },
     uglify: {
       options: {
         compress: {
@@ -59,9 +43,8 @@ module.exports = function (grunt) {
         },
       },
       build: {
-        files: {
-          'js/main.js': ['assets/js/build.js'],
-        },
+        src: ['assets/js/block/**/*.js'],
+        dest: 'js/build.js',
       },
       lib: {
         files: [
@@ -70,6 +53,16 @@ module.exports = function (grunt) {
             cwd: 'assets/js/lib',
             src: '**/*.*',
             dest: 'js',
+          },
+        ],
+      },
+      resource: {
+        files: [
+          {
+            expand: true,
+            cwd: 'assets/js/raw',
+            src: '**/*.json',
+            dest: 'js/raw',
           },
         ],
       },
@@ -104,7 +97,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: 'assets/js/**/*.js',
-        tasks: ['concat', 'uglify'],
+        tasks: ['uglify'],
       },
       img: {
         files: 'assets/img/**/*.*',
@@ -122,7 +115,6 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
