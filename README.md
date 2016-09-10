@@ -39,16 +39,7 @@ for the CSS it follows protocol [BEM][bem-website].
 To use livereload well, it's necessary to connect to *http::/localhost:8000*
 with Grunt running.
 
+All CSS selectors used on runtime must be specified at uncss task exceptions.
+
 [bem-website]: http://getbem.com/
 [grunt-website]: http://gruntjs.com/project-scaffolding
-
-## TODO
-
-Separates tasks in dev tasks and build tasks. Those last are all task to
-production environment. The others makes easy debugging and run a service.
-
-Build. Removes comments and debug stuff, concatenates all files and minifies
-result file.
-
-Dev. Preserves comments and debug stuff, concatenates all files and let they
-prettified.
