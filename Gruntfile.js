@@ -30,7 +30,7 @@ module.exports = function (grunt) {
     concat: {
       js: {
         src: ['assets/js/block/**/*.js'],
-        dest: 'assets/js/dist/build.js',
+        dest: 'assets/js/build.js',
       },
       resource: {
         files: [
