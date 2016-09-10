@@ -3,31 +3,19 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     less: {
-      development: {
-        options: {
-          paths: ['assets/less'],
-        },
-        files: {
-          'assets/css/styles.css': 'assets/less/source.less',
-        },
+      options: {
+        paths: ['assets/less'],
+      },
+      files: {
+        'assets/css/styles.css': 'assets/less/source.less',
       },
     },
     sass: {
-      dev: {
-        options: {
-          outputStyle: 'expanded',
-        },
-        files: {
-          'assets/css/styles.css': 'assets/scss/source.scss',
-        },
+      options: {
+        outputStyle: 'expanded',
       },
-      build: {
-        options: {
-          outputStyle: 'compressed',
-        },
-        files: {
-          'assets/css/styles.css': 'assets/scss/source.scss',
-        },
+      files: {
+        'assets/css/styles.css': 'assets/scss/source.scss',
       },
     },
     cssmin: {
@@ -46,36 +34,50 @@ module.exports = function (grunt) {
       },
     },
     uglify: {
-      options: {
-        compress: {
-          drop_console: false,
+      dev: {
+        options: {
+          beautify: {
+            width: 80,
+            beautify: true,
+          },
+          preserveComments: true,
+          mangle: false,
+          banner: "'use strict';\n",
+          process: function (src, filepath) {
+            return src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+          },
         },
-        global_defs: {
-          DEBUG: false,
-        },
-        dead_code: true,
-        preserveComments: false,
-        banner: "'use strict';",
-        process: function (src, filepath) {
-          return src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
-        },
-      },
-      build: {
-        src: ['assets/js/block/**/*.js'],
-        dest: 'js/build.js',
-      },
-      lib: {
         files: [
+          { 'js/main.js': ['assets/js/block/**/*.js'] },
           {
             expand: true,
             cwd: 'assets/js/lib',
             src: '**/*.*',
             dest: 'js',
           },
+          {
+            expand: true,
+            cwd: 'assets/js/raw',
+            src: '**/*.json',
+            dest: 'js/raw',
+          },
         ],
       },
-      resource: {
+      build: {
+        options: {
+          banner: "'use strict';",
+          process: function (src, filepath) {
+            return src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+          },
+        },
         files: [
+          { 'js/main.js': ['assets/js/block/**/*.js'] },
+          {
+            expand: true,
+            cwd: 'assets/js/lib',
+            src: '**/*.*',
+            dest: 'js',
+          },
           {
             expand: true,
             cwd: 'assets/js/raw',
@@ -111,7 +113,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: 'assets/scss/**/*.scss',
-        tasks: ['sass:dev'],
+        tasks: ['sass'],
       },
       css: {
         files: 'assets/css/**/*.css',
@@ -119,7 +121,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: 'assets/js/**/*.js',
-        tasks: ['uglify'],
+        tasks: ['uglify:dev'],
       },
       img: {
         files: 'assets/img/**/*.*',
@@ -144,4 +146,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('build', ['less', 'sass', 'cssmin', 'uglify:build', 'imagemin']);
 };
