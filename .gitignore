@@ -1,5 +1,7 @@
 node_modules/
-./css/
-./js/
-./img/
-./fonts/
+/css
+/js
+/img
+/fonts
+assets/css/styles.css
+assets/js/build.js
