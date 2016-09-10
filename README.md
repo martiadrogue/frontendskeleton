@@ -9,15 +9,19 @@ browser.
 **NOTE**: Before do anything you must replace occurrences *:project_name*,
 *:project_description* from your project's files.
 
-## Getting Started
+## Installation
 
-You may install these plugins with this command:
+If you haven't already done so, [install grunt-init][grunt-website].
+
+Once grunt-init is installed. Install these plugins with this command:
 
 ```shell
 npm install
 ```
 
-And then, you can run tasks calling this command:
+## Usage
+
+Into an empty directory, run tasks calling this command:
 
 ```shell
 grunt
@@ -36,3 +40,4 @@ To use livereload well, it's necessary to connect to *http::/localhost:8000*
 with Grunt running.
 
 [bem-website]: http://getbem.com/
+[grunt-website]: http://gruntjs.com/project-scaffolding
