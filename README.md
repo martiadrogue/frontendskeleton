@@ -13,7 +13,7 @@ browser.
 
 If you haven't already done so, [install grunt-init][grunt-website].
 
-Once grunt-init is installed. Install these plugins with this command:
+Once grunt-init is installed. Load these plugins from project with this command:
 
 ```shell
 npm install
@@ -21,7 +21,7 @@ npm install
 
 ## Usage
 
-Into an empty directory, run tasks calling this command:
+Into the root of working directory, run tasks calling this command:
 
 ```shell
 grunt
