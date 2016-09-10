@@ -12,6 +12,24 @@ module.exports = function (grunt) {
         },
       },
     },
+    sass: {
+      dev: {
+        options: {
+          outputStyle: 'expanded',
+        },
+        files: {
+          'assets/css/styles.css': 'assets/scss/source.scss',
+        },
+      },
+      build: {
+        options: {
+          outputStyle: 'compressed',
+        },
+        files: {
+          'assets/css/styles.css': 'assets/scss/source.scss',
+        },
+      },
+    },
     cssmin: {
       options: {
         keepSpecialComments: 0,
@@ -90,6 +108,10 @@ module.exports = function (grunt) {
       less: {
         files: 'assets/less/**/*.less',
         tasks: ['less'],
+      },
+      sass: {
+        files: 'assets/scss/**/*.scss',
+        tasks: ['sass:dev'],
       },
       css: {
         files: 'assets/css/**/*.css',
