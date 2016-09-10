@@ -1,0 +1,38 @@
+// Colors
+@color-base: #ff0000;
+// secundary colors
+@triadic-secondary: spin(@color-base, -(360 / 3));
+@triadic-tertiary: spin(@color-base, (360 / 3));
+
+@color-primary: mix(@color-base, mediumvioletred);
+@color-secondary: mix(@color-base, lightseagreen);
+@color-tertiary: mix(@color-base, mintcream);
+// link colors
+@color-link-hover: lighten(@color-primary, 10%); //#9c84c1
+@color-link-focus: darken(@color-primary, 10%); //#684b94
+// action colors
+@color-action-hover: saturate(@color-primary, 10%);
+@color-action-focus: desaturate(@color-primary, 10%);
+@color-action-disable: lightness(desaturate(@color-primary, 100%), 30%);
+// environment colors
+@color-background: #e2e2e2;
+@color-content: contrast(@body-bg);
+
+// screen size
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+// size margins
+@xsmall-margin: 2px;
+@small-margin: 4px;
+@medium-margin: 8px;
+@big-margin: 16px;
+
+// font
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
