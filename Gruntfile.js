@@ -16,7 +16,7 @@ module.exports = function (grunt) {
           'assets/css/styles.css': 'assets/less/source.less',
         },
       },
-      build: {
+      dist: {
         options: {
           paths: ['assets/less'],
           plugins: [
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
           },
         ],
       },
-      build: {
+      dist: {
         options: {
           banner: "'use strict';",
           process: function (src, filepath) {
@@ -170,6 +170,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['connect', 'watch']);
   grunt.registerTask(
     'build',
-    ['clean', 'less:build', 'sass', 'cssmin', 'uglify:build', 'imagemin']
+    ['clean', 'less:dist', 'sass', 'cssmin', 'uglify:dist', 'imagemin']
   );
 };
