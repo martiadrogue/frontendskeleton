@@ -2,6 +2,11 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      css: ['css/'],
+      js: ['js/'],
+      img: ['img/'],
+    },
     less: {
       dev: {
         options: {
@@ -133,15 +138,15 @@ module.exports = function (grunt) {
       },
       css: {
         files: 'assets/css/**/*.css',
-        tasks: ['cssmin'],
+        tasks: ['clean:css', 'cssmin'],
       },
       js: {
         files: 'assets/js/**/*.js',
-        tasks: ['uglify:dev'],
+        tasks: ['clean:js', 'uglify:dev'],
       },
       img: {
         files: 'assets/img/**/*.*',
-        tasks: ['imagemin'],
+        tasks: ['clean:img', 'imagemin'],
       },
     },
     connect: {
@@ -160,6 +165,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('default', ['connect', 'watch']);
   grunt.registerTask(
