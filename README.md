@@ -41,5 +41,9 @@ with Grunt running.
 
 All CSS selectors used on runtime must be specified at uncss task exceptions.
 
+## TODO
+
+Load and config task grunt-uncss to remove unused css rules.
+
 [bem-website]: http://getbem.com/
 [grunt-website]: http://gruntjs.com/project-scaffolding
