@@ -21,10 +21,16 @@ npm install
 
 ## Usage
 
-Into the root of working directory, run tasks calling this command:
+Into the root of working directory, run default tasks for dev environment calling this command:
 
 ```shell
 grunt
+```
+
+Run tasks for the distribution product calling this command:
+
+```shell
+grunt build
 ```
 
 ## Useful Notes
