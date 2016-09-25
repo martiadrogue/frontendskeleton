@@ -51,50 +51,37 @@ changes it executes some tasks. Also there is another server listening port
 8000, to watch HTML like a real web page. And there is another server listening
 pot 35729 which reload browser each time a file changes.
 
-#### CLEAN
+-   **CLEAN**: As its name says that task remove from working directory all
+    generated files. It's executed each time a CSS, JS or image is updated or
+    created.
 
-As its name says that task remove from working directory all generated files.
-It's executed each time a CSS, JS or image is updated or created.
+-   **LESS**: Compile source.less file into css build.css. CSS rules are in
+    readable state.
 
-#### LESS
+-   **SASS**: Compile source.sass file into css build.css. CSS rules are in
+    readable state. So, you must use LESS or SASS, not both at same time. If its
+    the case you must update Gruntfile.js.
 
-Compile source.less file into css build.css. CSS rules are in readable state.
+-   **CSS**: Concatenate all CSS files and then minify result located where HTML
+    pages are looking for.
 
-#### SASS
+-   **JS**: Concatenate all JS files. And then move it to the place where HTML
+    pages are looking for. Also Move libraries and JSONs to the same place. Then
+    remove all "use strict"; declarations and create one at the beginning of the
+    file.
 
-Compile source.sass file into css build.css. CSS rules are in readable state.
-So, you must use LESS or SASS, not both at same time. If its the case you must
-update Gruntfile.js.
-
-#### CSS
-
-Concatenate all CSS files and then minify result located where HTML pages are
-looking for.
-
-#### JS
-
-Concatenate all JS files. And then move it to the place where HTML pages are
-looking for. Also Move libraries and JSONs to the place where HTML pages are
-looking for. Then remove all "use strict"; declarations and create one at the
-beginning of the file.
-
-#### IMG
-
-Al images are compressed and move to the place where HTML pages are looking for.
+-   **IMG**: Al images are compressed and move to the place where HTML pages are
+    looking for.
 
 ### Distribution Tasks
 
 That tasks are called when front-end developer thinks it's time. Tasks are the
 same on most of the cases, except both of them.
 
-#### LESS
+-   **LESS**: Change Base color of application to distinct clearly development
+    to distribution design. The, add browser prefixes at CSS statements.
 
-Change Base color of application to distinct clearly development to distribution
-design. The, add browser prefixes at CSS statements.
-
-#### JS
-
-Change Variable names. Uglify all JS files. And Remove comments.
+-   **JS**: Change Variable names. Uglify all JS files. And Remove comments.
 
 ## Useful Notes
 
