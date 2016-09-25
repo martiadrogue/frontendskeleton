@@ -150,11 +150,6 @@ module.exports = function (grunt) {
           message: 'Clean and ImageMin finished running!',
         },
       },
-      dist: {
-        options: {
-          message: 'Deploy to distribution success!',
-        },
-      },
     },
     watch: {
       options: {
@@ -204,6 +199,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['connect', 'watch', 'notify_hooks']);
   grunt.registerTask(
     'build',
-    ['clean', 'less:dist', 'sass', 'cssmin', 'uglify:dist', 'imagemin', 'notify:dist']
+    ['clean', 'less:dist', 'sass', 'cssmin', 'uglify:dist', 'imagemin']
   );
 };
