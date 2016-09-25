@@ -73,6 +73,10 @@ pot 35729 which reload browser each time a file changes.
 -   **IMG**: Al images are compressed and move to the place where HTML pages are
     looking for.
 
+-   **NOTIFICATION**: At the end of every task a OS notification is shown to
+    confirm everything is OK or show errors. That  task is only available on
+    development environment.
+
 ### Distribution Tasks
 
 That tasks are called when front-end developer thinks it's time. Tasks are the
