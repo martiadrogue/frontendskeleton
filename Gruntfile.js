@@ -123,6 +123,39 @@ module.exports = function (grunt) {
         ],
       },
     },
+    notify_hooks: {
+      options: {
+        enabled: true,
+        title: 'LoginForm',
+        success: true,
+        duration: 3,
+      },
+    },
+    notify: {
+      css: {
+        options: {
+          title: 'Task Complete',
+          message: 'New Css minified successfully!',
+        },
+      },
+      js: {
+        options: {
+          title: 'Task Complete',
+          message: 'Clean and Uglify finished running!',
+        },
+      },
+      img: {
+        options: {
+          title: 'Task Complete',
+          message: 'Clean and ImageMin finished running!',
+        },
+      },
+      dist: {
+        options: {
+          message: 'Deploy to distribution success!',
+        },
+      },
+    },
     watch: {
       options: {
         livereload: true,
@@ -138,15 +171,15 @@ module.exports = function (grunt) {
       },
       css: {
         files: 'assets/css/**/*.css',
-        tasks: ['clean:css', 'cssmin'],
+        tasks: ['clean:css', 'cssmin', 'notify:css'],
       },
       js: {
         files: 'assets/js/**/*.js',
-        tasks: ['clean:js', 'uglify:dev'],
+        tasks: ['clean:js', 'uglify:dev', 'notify:js'],
       },
       img: {
         files: 'assets/img/**/*.*',
-        tasks: ['clean:img', 'imagemin'],
+        tasks: ['clean:img', 'imagemin', 'notify:img'],
       },
     },
     connect: {
@@ -166,10 +199,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-notify');
 
-  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('default', ['connect', 'watch', 'notify_hooks']);
   grunt.registerTask(
     'build',
-    ['clean', 'less:dist', 'sass', 'cssmin', 'uglify:dist', 'imagemin']
+    ['clean', 'less:dist', 'sass', 'cssmin', 'uglify:dist', 'imagemin', 'notify:dist']
   );
 };
