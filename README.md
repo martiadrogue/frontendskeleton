@@ -79,7 +79,7 @@ That tasks are called when front-end developer thinks it's time. Tasks are the
 same on most of the cases, except both of them.
 
 -   **LESS**: Change Base color of application to distinct clearly development
-    to distribution design. The, add browser prefixes at CSS statements.
+    to distribution design. Then, add browser prefixes at CSS statements.
 
 -   **JS**: Change Variable names. Uglify all JS files. And Remove comments.
 
