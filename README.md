@@ -105,5 +105,9 @@ All CSS selectors used on runtime must be specified at uncss task exceptions.
 
 Load and config task grunt-uncss to remove unused css rules.
 
+Download libraries with grunt-curl from its core source.
+
+Build an approach to BEM's Partial Sistem given grunt-include-replace.
+
 [bem-website]: http://getbem.com/
 [grunt-website]: http://gruntjs.com/project-scaffolding
