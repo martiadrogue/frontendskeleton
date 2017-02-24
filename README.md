@@ -96,7 +96,7 @@ file is edited.
 To make sure source code standards it use linter for CSS, JS and HTML. Although
 for the CSS it follows protocol [BEM][bem-website].
 
-To use livereload well, it's necessary to connect to *http::/localhost:8000*
+To use livereload in the right way, it's necessary to connect to *http::/localhost:8000*
 with Grunt running.
 
 All CSS selectors used on runtime must be specified at uncss task exceptions.
