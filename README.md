@@ -21,7 +21,14 @@ npm install
 
 ## Usage
 
-Into the root of working directory, run default tasks for dev environment calling this command:
+Into the root of working directory, run setup tasks to install foreign
+libraries calling this command:
+
+```shell
+grunt setup
+```
+
+Run default tasks for dev environment calling this command:
 
 ```shell
 grunt
