@@ -7,6 +7,16 @@ module.exports = function (grunt) {
       js: ['js/'],
       img: ['img/'],
     },
+    copy: {
+      main: {
+        files: [
+          {
+            src: ['node_modules/normalize.css/normalize.css'],
+            dest: 'assets/css/normalize.css',
+          },
+        ],
+      },
+    },
     less: {
       dev: {
         options: {
@@ -195,7 +205,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-notify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
+  grunt.registerTask('setup', ['copy']);
   grunt.registerTask('default', ['connect', 'watch', 'notify_hooks']);
   grunt.registerTask(
     'build',
